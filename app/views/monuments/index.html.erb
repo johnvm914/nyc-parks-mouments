@@ -1,0 +1,14 @@
+<div ng-app="app">
+  <div ng-controller="monumentsCtrl" ng-init="setup()">
+    <div ng-repeat="monument in monuments track by $index" ng-click ="hideData(show)">
+      <p>Name: {{ monument.name }}</p>
+      <div ng-if="show">
+        <p>Description: {{ monument.descrip }}</p>
+        <p>Borough: {{ monument.borough }}</p>
+        <p>Location: {{ monument.location }}</p>
+      </div>
+      <button ng-click="addFavorite(monument)">Save to Favorites</button>
+      <hr>
+    </div>
+  </div>
+</div>
